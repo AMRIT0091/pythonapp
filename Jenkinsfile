@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  stages {
     stage('CreateTomcatImage'){
        steps {
         copyArtifacts filter: '**/*.war', fingerprintArtifacts: true, projectName: env.JOB_NAME, selector: lastSuccessful()
@@ -28,3 +29,4 @@ pipeline {
      }
       
 }
+}   
