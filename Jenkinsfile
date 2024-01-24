@@ -1,17 +1,5 @@
 pipeline {
   agent any
-    stages {
-      stage('BUild Application'){
-        steps {
-          sh 'mvn -f jenkins/mypythonapp/pom.xml clean package'
-       }
-       post {
-        success {
-          echo "we are archiving the artifact"
-          archiveArtifacts artifacts: '**/*.war', followSymlinks: false
-        }
-       }
-     }
     stage('CreateTomcatImage'){
        steps {
         copyArtifacts filter: '**/*.war', fingerprintArtifacts: true, projectName: env.JOB_NAME, selector: lastSuccessful()
