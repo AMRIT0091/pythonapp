@@ -3,7 +3,6 @@ pipeline {
   stages {
     stage('CreateTomcatImage'){
        steps {
-        copyArtifacts filter: '**/*.war', fingerprintArtifacts: true, projectName: env.JOB_NAME, selector: lastSuccessful()
         echo "buiding docker images"
         sh '''
         original_pwd=$(pwd -P)
