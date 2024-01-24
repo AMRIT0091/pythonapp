@@ -3,6 +3,6 @@ WORKDIR /src
 COPY . /src
 RUN pip install flask
 RUN pip install flask_restful
-EXPOSE 3333
+EXPOSE 8087
 ENTRYPOINT ["python"]
 CMD ["./src/main.py"]
