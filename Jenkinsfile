@@ -3,6 +3,7 @@ pipeline {
     stages {
       stage('BUild Application'){
         steps {
+          echo "this is a build package "
        }
      }
     stage('build'){
