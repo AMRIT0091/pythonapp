@@ -8,7 +8,7 @@ pipeline {
         original_pwd=$(pwd -P)
         ls
         cd src
-        docker build -t localimg:$BUILD_NUMBER .
+        docker build -t localimg:$BUILD_NUMBER -f original_pwd .
         cd $original_pwd
         sh '''
        }
