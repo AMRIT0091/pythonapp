@@ -7,8 +7,9 @@ pipeline {
         sh '''
         original_pwd=$(pwd -P)
         ls
-        cd /home/vagrant/mypythonapp
+        cd mypythonapp
         docker build -t localimg:$BUILD_NUMBER .
+        cd $original_pwd
         sh '''
        }
      }
