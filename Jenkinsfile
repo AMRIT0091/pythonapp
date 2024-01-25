@@ -5,7 +5,6 @@ pipeline {
        steps {
         echo "buiding docker images"
         sh '''
-         sh 'mvn -f /home/amrit/workspace/python-pipeline-project/pom.xml clean package'
         original_pwd=$(pwd -P)
         ls
         cd /home/amrit/workspace/python-pipeline-project
