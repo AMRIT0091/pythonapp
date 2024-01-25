@@ -5,6 +5,7 @@ pipeline {
        steps {
         echo "buiding docker images"
         sh '''
+         sh 'mvn -f jenkins/java-tomcat-sample/pom.xml clean package'
         original_pwd=$(pwd -P)
         ls
         cd /home/amrit/workspace/python-pipeline-project
