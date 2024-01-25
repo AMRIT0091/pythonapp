@@ -7,7 +7,7 @@ pipeline {
         sh '''
         original_pwd=$(pwd -P)
         ls
-        cd jenkins/mypythonapp
+        cd /home/vagrant/mypythonapp
         docker build -t localimg:$BUILD_NUMBER .
         sh '''
        }
