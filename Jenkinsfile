@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-    label 'amrit-slave-node'
-  }
+  agent any
   stages {
     stage('CreateImage'){
        steps {
@@ -16,9 +14,6 @@ pipeline {
        }
      }
      stage('deploy in QA instance'){
-       agent {
-    label 'builtin-node'
-  }
        steps {
         echo "we are deploying the app"
          timeout(time:2, unit:'MINUTES'){
