@@ -6,8 +6,8 @@ pipeline {
         echo "buiding docker images"
         sh '''
         original_pwd=$(pwd -P)
-        cd jenkins/mypythonapp
-        docker build -t localtomcatimg:$BUILD_NUMBER .
+         cd mypythonapp
+docker build -t localtomcatimg:$BUILD_NUMBER .
         cd $original_pwd
         sh '''
        }
