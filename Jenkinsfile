@@ -6,7 +6,7 @@ pipeline {
         echo "buiding docker images"
         sh '''
         original_pwd=$(pwd -P)
-         cd pythonapp
+        cd python-pipeline-project
 docker build -t localtomcatimg:$BUILD_NUMBER .
         cd $original_pwd
         sh '''
