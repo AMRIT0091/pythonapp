@@ -9,7 +9,6 @@ pipeline {
         ls
         cd mypythonapp
         docker build -t localimg:$BUILD_NUMBER .
-        cd $original_pwd
         sh '''
        }
      }
