@@ -22,7 +22,7 @@ pipeline {
         sh '''
         docker container stop localinstance || true
         docker container rm localinstance || true
-        docker container run -itd --name localinstance -p 8087:8080 localimg:$BUILD_NUMBER
+        docker container run -itd --name localinstance -p 5000:8080 localimg:$BUILD_NUMBER
     
         sh '''
        }
