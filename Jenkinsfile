@@ -8,7 +8,7 @@ pipeline {
         original_pwd=$(pwd -P)
         ls
         cd /home/amrit/workspace/python-pipeline-project
-        docker build -t localimg:$BUILD_NUMBER .
+        docker build -t mycalculater:v1 .
         cd $original_pwd
         sh '''
        }
@@ -20,9 +20,9 @@ pipeline {
            input message: 'Approve thre staging deployment'
          }
         sh '''
-        docker container stop localinstance || true
-        docker container rm localinstance || true
-        docker container run -itd --name localinstance -p 8090:80 --restart=always localimg:$BUILD_NUMBER
+        docker container stop mycalculater-app || true
+        docker container rm mycalculater-app || true
+        docker run -d --name mycalculater-app -p 8090:80 mycalculater:$BUILD_NUMBER
     
         sh '''
        }
