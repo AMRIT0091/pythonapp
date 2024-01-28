@@ -8,7 +8,7 @@ pipeline {
         original_pwd=$(pwd -P)
         ls
         cd /home/amrit/workspace/python-pipeline-project
-        docker build -t mycalculater:v1 .
+        docker build -t mycalculater:$BUILD_NUMBER .
         cd $original_pwd
         sh '''
        }
