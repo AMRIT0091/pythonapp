@@ -7,7 +7,7 @@ pipeline {
         sh '''
         original_pwd=$(pwd -P)
         ls
-        cd /home/amrit/workspace/python-pipeline-project
+        cd /var/lib/jenkins/workspace/python-pipeline-project
         docker build -t localimg:$BUILD_NUMBER .
         cd $original_pwd
         sh '''
