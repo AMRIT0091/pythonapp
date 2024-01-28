@@ -1,8 +1,6 @@
 FROM python:3.8
-WORKDIR /src
-COPY . /src
-RUN pip install flask
-RUN pip install flask_restful
-EXPOSE 8090
-ENTRYPOINT ["python"]
-CMD ["./src/main.py"]
+WORKDIR /app
+COPY . /app
+RUN pip install Flask
+EXPOSE 80
+CMD ["python", "./main.py"]
